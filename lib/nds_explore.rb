@@ -1,5 +1,5 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
-
+require 'pry'
 require 'directors_database'
 
 # Call the method directors_database to retrieve the NDS
@@ -9,16 +9,19 @@ def pretty_print_nds(nds)
   pp nds
 end
 
-
+binding.pry
 def print_first_directors_movie_titles
- binding.pry
-  row_index = 0 
-  while row_index < directors_database[0][:movies].length do 
-    column_index = 0 
-    inner_len = directors_database[0][:movies][row_index][column_index].length
-  end
+    row_index = 0
+    while row_index < directors_database[0][:movies].count do
+      element_index = 0
+      while element_index < directors_database[0][:movies][row_index].count do
+        directors_database[0][:movies][row_index][:title]
+        binding.pry
+        row_index += 1
+      
+      end
+    end
 end
- 
- 
- 
- 
+
+
+
